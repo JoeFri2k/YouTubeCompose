@@ -1,0 +1,23 @@
+name: immichframe
+
+services:
+  immichframe:
+    container_name: immichframe
+    image: ghcr.io/immichframe/immichframe:latest
+    restart: on-failure
+
+    ports:
+      - "4242:8080"
+    environment:
+      # EINSTELLUNGEN
+      # https://immichframe.online/docs/getting-started/configuration
+      TZ: "Europe/Berlin"
+      ImmichServerUrl: "http://192.168.2.62:2383"
+      ApiKey: "key-löadsfumea"  # ApiKey from Immich Account
+      Albums: "6e768edf-c7cf-319d-a0de-8a0202f1a186,a7c8d5ac-b2ca-6ebf-8fe1-14b630934bf9"  #ImmichAlbum UUID from AlbumView
+      AuthenticationSecret: "secretpassword"  #Optional for basic security
+      ClockFormat: "HH:mm"
+      PhotoDateFormat: 'dd/MM/yyyy'
+      Language: 'de'
+      ShowAlbumName: true  # boolean
+      Layout: 'splitview' 
